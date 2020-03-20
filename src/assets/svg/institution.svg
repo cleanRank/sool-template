@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>机构信息</title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标/标准/企业" >
+            <circle id="椭圆形备份-26" cx="10" cy="10" r="8"></circle>
+            <polyline id="路径-13备份" points="6.44861429 9.77406934 9.99690695 6.97955625 13.5451996 9.77406934"></polyline>
+            <path d="M9.94861429,8.97955625 L9.94861429,12.2250673" id="直线-12备份-2" stroke-linecap="square"></path>
+            <path d="M8.18253766,10.3776887 L8.18253766,12.1437568" id="直线-12备份-6" stroke-linecap="square"></path>
+            <path d="M9.92098885,9.28019265 L9.92098885,15.2801926" id="直线-12备份-3" stroke-linecap="square" transform="translate(9.920989, 12.280193) rotate(-270.000000) translate(-9.920989, -12.280193) "></path>
+            <path d="M11.6082155,10.0202145 L11.6082155,11.2136455" id="直线-12备份-7" stroke-linecap="square" transform="translate(11.608216, 10.213646) rotate(-270.000000) translate(-11.608216, -10.213646) "></path>
+        </g>
+    </g>
+</svg>

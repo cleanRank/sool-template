@@ -1,0 +1,18 @@
+.godon-basic{
+  padding: 34px 0 0 40px;
+  .basic-institution-name{
+    font-size: 18px;
+    @include theme_W1();
+  }
+  .basic-detailInfo{
+    @include theme_W2();
+    margin-top: 20px;
+    .basic-mod{
+      margin-top: 9px;
+      font-size: 14px;
+      .mod-name{
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@charset "utf-8";
+%opa{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100001;
+  background: rgba(0, 0, 0, 0.5);
+}
+%btn_comsty{
+  height: 50px;
+  line-height: 50px;
+  background: none;
+  font-size: 14px;
+  color: #008AD3;
+  width: 100%;
+  display: block;
+  border: 0;
+  outline: none;
+}
+
+.pop_box{
+  /*position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;*/
+  .opa{
+    @extend %opa;
+  }
+}
+.tip-cont{
+  width: 300px;
+  background: #fff;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  right: 0;
+  top: 30%;
+  z-index: 10000111;
+  border-radius: .1333rem;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  .p_txt{
+    padding-top: 34px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .state{
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
+  }
+  .btn_cancle{
+    color: #666666;
+  }
+  .js_pop_ok{
+    color: #666666;
+  }
+}
+.btn-cont{
+  border-top: 1px solid #dddddd;
+  a{
+    @extend %btn_comsty;
+    border-right: 1px solid #dddddd;
+    &:last-child{
+      border-right: 0;
+    }
+  }
+}

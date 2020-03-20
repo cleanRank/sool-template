@@ -1,0 +1,975 @@
+.godon-dropdown{
+  height: 100%;
+  position: relative;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  &.long-dropdown{
+    width: 140px;
+  }
+  &.short-dropdown{
+    width: 60px;
+  }
+  &.mini-dropdown{
+    width: 48px;
+  }
+  &.tool-dropdown{
+    @include justify-content(flex-start);
+    .godon-dropdown-menu{
+      width: 165px;
+      top: 24px;
+      ul{
+        li{
+          height: 28px;
+        }
+      }
+    }
+  }
+  .dropdown-head{
+    width: 100%;
+    height: 100%;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    &:hover{
+      @include theme_S1();
+    }
+  }
+  .dropdown-btn{
+    height: 20px;
+    @include box-sizing();
+    border-radius: 4px;
+    border:1px solid rgba(110,123,139,1);
+    @include display-flex();
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+    span{
+      height: 100%;
+      padding: 0 2px;
+      @include display-flex();
+      @include align-items(center);
+      width: 140px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    i{
+      border-left:1px solid rgba(110,123,139,1);
+    }
+  }
+  &.down{
+    .dropdown-head{
+      @include theme_S1();
+    }
+    .godon-dropdown-menu{
+      display: block;
+    }
+  }
+  .godon-dropdown-menu{
+    position: absolute;
+    width: 140px;
+    top: 44px;
+    display: none;
+    padding: 4px 0;
+    left: 0;
+    z-index: 99999;
+    @include theme_A1();
+    @include theme_boxshown_menu();
+    transition: height $second ease-in-out;
+    -webkit-transition: height $second ease-in-out;
+    -moz-transition: height $second ease-in-out;
+    &[x-placement^=top]{
+      bottom: 34px;
+      top: auto;
+    }
+    ul{
+      max-height: 340px;
+      li{
+        height: 36px;
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding:0 14px;
+        @include theme_W1();
+        font-size: 12px;
+        &.active{
+          @include theme_S1();
+        }
+        &:hover{
+          @include theme_S1();
+        }
+        span{
+          font-size: 12px;
+        }
+      }
+    }
+    &.userinfo{
+      width: 323px;
+      @include box-sizing();
+      right: -28px;
+      left: auto;
+      .userinfo-avatar{
+        @include display-flex();
+        @include align-items(center);
+        height: 100px;
+        padding-left: 25px;
+        color: #ffffff;
+        @include theme_B1();
+        .userinfo-img{
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+        }
+        .userinfo-account{
+          height: 72px;
+          margin-left: 25px;
+          @include display-flex();
+          @include flex-direction-column();
+          @include justify-content(space-around);
+          .account{
+            font-size: 18px;
+            color: #ffffff;
+          }
+          .tel{
+            font-size: 12px;
+            color: #ffffff;
+          }
+          .mail{
+            font-size: 12px;
+            color: #ffffff;
+          }
+        }
+      }
+      
+      .userinfo-container{
+        padding: 15px 28px 21px 28px;
+        @include theme_L2_split(border-top, 1px, solid);
+        color: #ffffff;
+        .container-item{
+          @include display-flex();
+          @include align-items(center);
+          @include justify-content(space-between);
+          margin-bottom: 10px;
+          &.flex-end{
+            @include justify-content(flex-end);
+            .btn-head-default{
+              margin-left: 6px;
+            }
+          }
+          .mod-item-l{
+            .name{
+              font-size: 12px;
+            }
+          }
+          .mod-item-r{
+            .item-tip{
+              color: #7D858D;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.table-assist{
+  width: 100%;
+  tr{
+    td{
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      @include theme_W5();
+      text-align: left;
+      padding-left: 5px;
+      font-size: 12px;
+      @include theme_L4_split(border-bottom, 1px, solid);
+      &.static{
+        width: 120px;
+      }
+      &.oprator{
+        width: 30px;
+      }
+      .active{
+        display: none;
+      }
+    }
+    &:hover{
+      .active{
+        display: block;
+      }
+    }
+    &:nth-child(even){
+      @include theme_T2();
+    }
+    &:nth-child(odd){
+      @include theme_T1();
+    }
+  }
+  thead{
+    tr{
+      &:first-child{
+        @include theme_T0();
+      }
+    }
+  }
+}
+.godon-form{
+  .godon-form-head{
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include theme_panel_font();
+    font-size: 12px;
+    margin: 7px 0 16px;
+  }
+  .godon-from-inside{
+    font-size: 12px;
+    .form-inside-oprator{
+      padding: 0 12px 1px;
+    }
+    .form-inside-item{
+      padding: 12px 12px 1px 12px;
+    }
+  }
+  .form-inside-tr{
+    text-align: right;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    .icon{
+      @include theme_W3();
+      margin-right: 12px;
+    }
+  }
+  .godon-form-item{
+    @include display-flex();
+    @include align-items(center);
+    @include theme_panel_font();
+    margin-bottom: 8px;
+    .godon-input{
+      @include flex(1, 1, auto);
+      @include display-flex();
+      @include align-items(center);
+      position: relative;
+      .input-search{
+        position: absolute;
+        right: 0;
+      }
+      .el-input__icon{
+        line-height: inherit;
+      }
+      .el-input__prefix{
+        right: 0px;
+        left: auto;
+      }
+      .el-date-editor{
+        width: 211px;
+      }
+      &.m-input{
+        &.mini-width{
+          @include flex(0, 0, 87px);
+        }
+        .el-input__inner{
+          height: 24px;
+          line-height: 24px;
+        }
+        .godon-input__inder{
+          height: 24px;
+        }
+      }
+      &.l-input{
+        &.mini-width{
+          @include flex(0, 0, 87px);
+        }
+        .el-input__inner{
+          height: 32px;
+          line-height: 32px;
+          padding: 0 7px;
+        }
+        .godon-input__inder{
+          height: 32px;
+          padding: 0 7px;
+        }
+      }
+    }
+    .godon-form-text{
+      @include theme_panel_font();
+      font-size: 12px;
+      margin-left: 4px;
+      height: 20px;
+      line-height: 20px;
+      &.tip{
+        opacity: .65;
+        .el-icon-bell{
+          margin-right: 5px;
+        }
+      }
+    }
+    .godon-form-note{
+      @include theme_panel_font();
+      font-size: 12px;
+      text-indent: 10px;
+      line-height: 20px;
+    }
+    .godon-form-icon{
+      @include theme_panel_font();
+      font-size: 16px;
+    }
+  }
+  .godon-form-label{
+    @include flex(0, 0, 65px);
+    font-size: 12px;
+    cursor: unset;
+    &.m-label{
+      @include flex(0, 0, 120px);
+    }
+    &.mid-label{
+      @include flex(0, 0, 100px);
+    }
+    &.single-label{
+      @include flex(0, 0, 24px);
+    }
+    &.b-label{
+      @include flex(0, 0, 80px);
+    }
+    &.text-right{
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
+  .el-input{
+    font-size: 12px;
+    &.is-disabled{
+      .el-input__prefix{
+        @include theme_input_disabled();
+      }
+    }
+    .el-input__inner{
+      height: 20px;
+      line-height: 20px;
+    }
+    .el-input__suffix{
+      .el-select__caret{
+        font-size: 12px;
+      }
+    }
+    &.is-focus{
+      .el-input__inner{
+        @include theme_select_hover();
+      }
+    }
+    .el-input__inner{
+      @include theme_select();
+      padding: 0 4px;
+      width: 100%;
+      &:hover{
+        @include theme_select_hover();
+      }
+      &:focus{
+        @include theme_select_foucs();
+      }
+      &::-webkit-input-placeholder {
+        @include theme_W4();
+      }
+      &:-ms-input-placeholder {
+        @include theme_W4();
+      }
+      &::-ms-input-placeholder {
+        @include theme_W4();
+      }
+      &::placeholder {
+        @include theme_W4();
+      }
+    }
+    &.is-disabled{
+      .el-input__inner{
+        height: 20px;
+        line-height: 20px;
+        @include theme_input_disabled();
+        &:hover{
+          @include theme_input_disabled();
+        }
+      }
+      .el-input__suffix{
+        display: none;
+      }
+    }
+  }
+}
+.godon-input__inder{
+  position: relative;
+  height: 20px;
+  @include display-flex();
+  @include align-items(center);
+  padding: 0 4px;
+  font-size: 12px;
+  @include theme_input();
+  width: 100%;
+  &.m-width{
+    width: 100px;
+  }
+  &.m-input{
+    height: 32px;
+  }
+  &:disabled{
+    @include theme_input_disabled();
+    cursor: not-allowed;
+    &:hover{
+      @include theme_input_disabled();
+    }
+  }
+  &:hover{
+    @include theme_input_hover();
+  }
+  &:focus{
+    @include theme_input_foucs();
+  }
+  @include box-sizing();
+  &::-webkit-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &:-ms-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &::-ms-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &::placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+}
+.godon-input__search{
+  position: relative;
+  height: 32px;
+  @include display-flex();
+  @include align-items(center);
+  padding: 0 7px;
+  font-size: 12px;
+  @include theme_input();
+  width: 100%;
+  &:disabled{
+    @include theme_input_disabled();
+    cursor: not-allowed;
+    &:hover{
+      @include theme_input_disabled();
+    }
+  }
+  &:hover{
+    @include theme_input_hover();
+  }
+  @include box-sizing();
+  &::-webkit-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &:-ms-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &::-ms-input-placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+  &::placeholder {
+    @include theme_W4();
+    font-size: 12px;
+  }
+}
+.godon-table-input{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  &.absolute{
+    position: absolute;
+    z-index: 10;
+    display: inline-block;
+  }
+  .edit-state{
+    position: absolute;
+    @include display-flex();
+    height: 24px;
+    background: #ffffff;
+    right: 0;
+    top: 32px;
+    z-index: 30;
+    span{
+      height: 100%;
+      width: 24px;
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(center);
+    }
+    .icon{
+      font-size: 16px;
+      color: #40474F;
+    }
+  }
+  input:focus{
+    outline-offset: -2px;
+  }
+}
+.godon-input-tabinhert{
+  position: relative;
+  height: 100%;
+  @include display-flex();
+  @include align-items(center);
+  padding: 0 4px;
+  font-size: 12px;
+  @include theme_table_input();
+  width: 100%;
+  @include box-sizing();
+}
+.godon-input{
+  &.select-tabinhert{
+    height: 100%;
+    width: 100%;
+    .el-input{
+      height: 100%;
+      .el-input__inner{
+        position: relative;
+        height: 100%;
+        border-radius: unset;
+        @include display-flex();
+        @include align-items(center);
+        padding: 0 4px;
+        font-size: 12px;
+        @include theme_table_input();
+        width: 100%;
+        @include box-sizing();
+      }
+    }
+  }
+  .input-icon{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  &.tem-input{
+    width: 100px;
+  }
+  .el-select__tags{
+    .el-tag{
+      &.el-tag--info{
+        @include btn_border_gray();
+      }
+    }
+  }
+}
+.godon-select{
+  margin-top: 0px!important;
+  &.max-width{
+    max-width: 187px;
+  }
+  &.el-select-dropdown{
+    @include theme_select_body();
+    border: none;
+    .popper__arrow{
+      display: none;
+    }
+    .el-select-dropdown__list{
+      padding: 0;
+    }
+    .el-select-dropdown__item{
+      font-size: 12px;
+      padding: 0 14px;
+      height: 28px;
+      line-height: 28px;
+      @include theme_select_body_font();
+      &.selected{
+        @include theme_select_body_active();
+      }
+      &.hover{
+        @include theme_select_body_active();
+      }
+      &:hover{
+        @include theme_select_body_active();
+      }
+    }
+    &.is-multiple{
+      .el-select-dropdown__item{
+        &.selected{
+          &.hover{
+            @include theme_select_body_active();
+          }
+        }
+      }
+    }
+  }
+}
+.godon-icon{
+  &.icon-search{
+    width:48px;
+    height:20px;
+    line-height: 20px;
+    text-align: center;
+    @include theme_B1();
+    border-radius:0px 4px 4px 0px;
+    color: #ffffff;
+  }
+}
+.godon-form{
+  .mid-input{
+    .el-input__inner{
+      padding: 0 8px;
+    }
+  }
+  .mid-height{
+    .el-input__inner{
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+  .mid-width{
+    .el-input__inner{
+      width: 100px;
+    }
+  }
+}
+/**
+ * @Descripttion:svg 样式 
+ * @Author: zhusn-b
+ */
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.15em;
+  overflow: hidden;
+  @include theme_svg();
+}
+.svg-menu-class{
+  width: 18px;
+  height: 18px;
+}
+.svg-collect-class{
+  width: 18px;
+  height: 18px;
+}
+.svg-dashboard-class{
+  width: 16px;
+  height: 16px;
+}
+.godon-tree{
+  &.el-tree{
+    background: transparent;
+    font-size: 12px;
+    @include theme_panel_font();
+    .el-tree-node{
+      position: relative;
+      // padding-left: 10px;
+      .el-tree-node__content{
+        padding-left: 2px!important;
+        height: 32px;
+        line-height: 32px;
+        .el-tree-node__expand-icon{
+          font-family: "iconfont" !important;
+          speak: none;
+          font-style: normal;
+          font-weight: 400;
+          padding: 2px;
+          font-size: 24px;
+          font-variant: normal;
+          text-transform: none;
+          vertical-align: baseline;
+          display: inline-block;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transition: unset;
+          &::before{
+            content: "\e66c";
+          }
+          &.is-leaf{
+            background: none;
+            margin-right: 0px;
+            width: 8px;
+          }
+        }
+        .expanded{
+          transform: unset;
+          &.el-tree-node__expand-icon{
+            &::before{
+              content: "\e66d";
+            }
+          }
+        }
+      }
+      &:last-child{
+        &:before{
+          top: 0px;
+        }
+      }
+      &.is-current{
+        >.el-tree-node__content{
+          @include theme_leftMenu_select();
+        }
+      }
+      &:focus{
+        >.el-tree-node__content{
+          background: transparent;
+        }
+      }
+      &:hover{
+        >.el-tree-node__content{
+          background: transparent;
+        }
+      }
+      .el-tree-node__children{
+        padding-left: 20px;
+      }
+      >.el-tree-node__children{
+        overflow: inherit;
+      }
+      &:last-child{
+        &:before{
+          height: 17px;
+        }
+      }
+      &:before, &:after{
+        content: "";
+        left: -5px;
+        position: absolute;
+        right: auto;
+        border-width: 1px;
+      }
+      &:before{
+        border-left: 1px solid rgba(189,199,213,1);;
+        bottom: 0px;
+        height: 100%;
+        // top: -10px;
+        width: 1px;
+      }
+      &:after{ 
+        border-top: 1px solid rgba(189,199,213,1);;
+        height: 20px;
+        top: 17px;
+        width: 15px;
+      }
+      .custom-tree-node{
+        position: relative;
+        @include flex(1, 1, auto);
+        @include display-flex();
+        @include justify-content(space-between);
+        @include align-items(center);
+        &:hover{
+          .oprator-hover{
+            display: block;
+          }
+        }
+        .godon-input__inder{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          z-index: 10;
+        }
+      }
+    }
+    >.el-tree-node{
+      // padding-left: 0;
+      &::before{
+        border-left: none;
+      }
+      &:after{
+        border-top: none;
+      }
+      >.el-tree-node__children{
+        .el-tree-node{
+          &:first-child{
+            &::before{
+              // height: 22px;
+              // top: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.class-level{
+    &.el-tree{
+      .el-tree-node{
+        &.is-current{
+          .el-tree-node__content{
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+  &.view-level{
+    &.el-tree{
+      .el-tree-node{
+        &.is-current{
+          .el-tree-node__content{
+            background: transparent;
+          }
+        }
+        &.is-focusable{
+          .is-current{
+            .el-tree-node__content{
+              .custom-tree-node{
+                @include theme_leftMenu_select();
+              }
+            }
+          }
+        }
+        .el-tree-node__content{
+          .custom-tree-node{
+            .godon-input__inder{
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.oprator-hover{
+  position: relative;
+  display: none;
+  .detail{
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  .tab-detail{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+  .oprator-dropdown{
+    position: absolute;
+    @include theme_mainbg();
+    right: -12px;
+    top: 0;
+    z-index: 100;
+    display: none;
+    ul{
+      padding: 4px 0;
+      li{
+        height: 28px;
+        width: 79px;
+        @include display-flex();
+        @include align-items(center);
+        i{
+          margin-left: 10px;
+        }
+        span{
+          margin-left: 10px;
+        }
+        &:hover{
+          @include theme_leftMenu_select();
+        }
+      }
+    }
+  }
+  &:hover{
+    .oprator-dropdown{
+      display: block;
+    }
+  }
+}
+.godon-btn-item{
+  @include display-flex();
+  padding: 0 12px;
+  @include justify-content(space-between);
+  @include align-items(center);
+}
+.godon-input{
+  .el-slider{
+    @include flex(1, 1, auto);
+    @include display-flex();
+    @include align-items(center);
+    .el-input-number__decrease, .el-input-number__increase{
+      display: none;
+    }
+    .el-slider__input{
+      @include flex(0, 0, 65px);
+      margin-right: 12px;
+      margin-top: 0;
+      .el-input__inner{
+        &:focus{
+          @include theme_input_foucs();
+        }
+      }
+    }
+    .el-slider__runway{
+      height: 1px;
+      margin: 0;
+      background: #6E7B8B;
+      .el-slider__bar{
+        height: 1px;
+        background: #5291DD;
+      }
+      .el-slider__button{
+        background:rgba(55,63,72,1);
+        border: 1px solid rgba(110,123,139,1);
+      }
+      .el-slider__button-wrapper{
+        top: -17px;
+      }
+      &.show-input{
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+.template-select-dropdown{
+  position: absolute;
+  top: 28px;
+  left: 0;
+  z-index: 10;
+  @include display-flex();
+  -webkit-transition: height .3s cubic-bezier(.23,1,.32,1);
+  transition: height .3s cubic-bezier(.23,1,.32,1);
+  transition: height .3s cubic-bezier(.23,1,.32,1);
+  transition: height .3s cubic-bezier(.23,1,.32,1);
+  width: 278px;
+  overflow: hidden;
+  height: 0;
+  &.display{
+    height: 264px;
+  }
+  .select-list{
+    @include flex(0, 0, 33.4%);
+    height: 264px;
+    @include theme_mainbg();
+    border-radius: 4px;
+    box-shadow:0px 0px 3px 2px rgba(0,0,0,0.3);
+    .first{
+      height: 36px;
+      line-height: 36px;
+      font-size: 12px;
+      @include theme_panel_font();
+      padding-left: 12px;
+    }
+    .select-item{
+      height: 28px;
+      @include display-flex();
+      @include align-items(center);
+      padding-left: 12px;
+      font-size: 12px;
+      @include theme_panel_font();
+      &.active {
+        @include theme_leftMenu_select();
+      }
+      &:hover{
+        @include theme_leftMenu_select();
+      }
+      .select-name{
+        width: 60px;
+        height: 28px;
+        line-height: 28px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

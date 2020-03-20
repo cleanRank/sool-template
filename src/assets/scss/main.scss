@@ -1,0 +1,1105 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: zhusn-b
+ * @Date: 2019-08-12 14:17:08
+ * @LastEditors: zhusn-b
+ * @LastEditTime: 2020-03-05 10:32:19
+ */
+/*
+ * @Descripttion: main css
+ * @version: 0.1.0
+ * @Author: zhusn-b
+ * @Date: 2019-08-12 14:17:08
+ * @LastEditors: zhusn-b
+ * @LastEditTime: 2019-08-29 18:29:43
+ */
+$second: .2s;
+$delay-time: .15s;
+$activeBg: #3C689C;
+.site-frame{
+  @include theme_mainbg();
+  width: 100%;
+  height: 100%;
+  .site-frame-commonComponents{
+    height: 100%;
+    .site-frame-main{
+      @include display-flex();
+      height: calc(100% - 44px);
+      .site-sidebar{
+        height: 100%;
+        z-index: 1;
+        .site-sidebar-bar{
+          width: 160px;
+          height: 100%;
+          @include theme_leftMenu();
+          @include box_shadow();
+          transition: width $second ease-in-out;
+          -webkit-transition: width $second ease-in-out;
+          -moz-transition: width $second ease-in-out;
+          font-size: 14px;
+          .sidebar-menu{
+            width: 100%;
+            .side-menu-list{
+              white-space: nowrap;
+              &.bg-hover:hover{
+                cursor: pointer;
+                @include theme_leftMenu_select();
+              }
+              padding-left: 10px;
+              height: 36px;
+              @include display-flex();
+              @include align-items(center);
+              &.active{
+                @include theme_leftMenu_select();
+              }
+              .menu-i{
+                // height: 20px;
+                // width: 20px;
+                &.collapse-icon{
+                  font-size: 18px;
+                  cursor: pointer;
+                  transition: transform $second ease-in-out,
+                  -webkit-transform $second ease-in-out;
+                  -webkit-transition: transform $second ease-in-out,
+                  -webkit-transform $second ease-in-out;
+                  -moz-transition: transform $second ease-in-out,
+                  -webkit-transform $second ease-in-out;
+                }
+              }
+              .svg{
+                height: 100%;
+                margin-right: 12px;
+                @include display-flex();
+                @include align-items(center);
+                @include justify-content(center);
+              }
+              .icon-svg{
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+          .sidebar-item{
+            .sidebar-item-menuName{
+              width: auto;
+              overflow: hidden;
+              opacity: 1;
+              transition: width $second ease-in-out $delay-time;
+              -webkit-transition: width $second ease-in-out $delay-time;
+              -moz-transition: width $second ease-in-out $delay-time;
+              transition: opacity $second ease-in-out $delay-time;
+              -webkit-transition: opacity $second ease-in-out $delay-time;
+              -moz-transition: opacity $second ease-in-out $delay-time;
+            }
+            &.split-level{
+              padding-left: 0;
+              .split-line{
+                @include flex(1, 1, auto);
+                height: 1px;
+                @include theme_L2_bg()
+              }
+              span{
+                margin-left: 0;
+                font-size: 12px;
+                @include theme_W3();
+              }
+            }
+          }
+          .sidebar-bar-main{
+            height: calc(100% - 224px);
+            overflow: auto;
+          }
+        }
+      }
+      &.isCollapse{
+        .site-sidebar-bar{
+          width: 40px;
+          overflow: hidden;
+          .sidebar-item{
+            .collapse-icon{
+              transform: rotate(-180deg);
+              -webkit-transform: rotate(-180deg);
+              -moz-transform: rotate(-180deg);
+            }
+            .sidebar-item-menuName{
+              opacity: 0;
+              width: 0px;
+            }
+            .split-line{
+              &.mr5{
+                margin-right: 0;
+              }
+            }
+            .collapse-line{
+              display: none;
+            }
+          }
+
+        }
+      }
+      .site-frame-content{
+        position: relative;
+        @include flex(1, 1, auto);
+        .el-loading-mask{
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+.headBar {
+  position: relative;
+  height: 44px;
+  width: 100%;
+  @include theme_leftMenu();
+  @include box_shadow_head();
+  z-index: 1;
+  .headerBar-content{
+    height: 100%;
+    padding-right: 28px;
+    @include display-flex();
+    @include align-items(center);
+    .head-name{
+      span:first-child{
+        font-size: 20px;
+        margin-left: 30px;
+      }
+      span:first-child+span{
+        font-size: 18px;
+        margin-left: 16px;
+      }
+    }
+    .head-features{
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(flex-end);
+      height: 100%;
+      .head-fun{
+        @include display-flex();
+        @include align-items(center);
+        height: 100%;
+      }
+      span{
+        font-size: 14px;
+        @include theme_W1();
+      }
+      .avatar{
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+.godon-navigation-bar-home{
+  height: 100%;
+  width: 100%;
+  @include display-flex();
+  .navigation-bar{
+    @include flex(0, 0, 120px);
+    height: 100%;
+    @include theme_leftMenu();
+    transition: flex $second ease-in-out;
+    -webkit-transition: flex $second ease-in-out;
+    -moz-transition: flex $second ease-in-out;
+    font-size: 14px;
+    @include theme_panel_line(border-right, 1px, solid);
+    ul{
+      li{
+        position: relative;
+        height: 36px;
+        padding-left: 10px;
+        @include display-flex();
+        @include align-items(center);
+        font-size: 13px;
+        &.first{
+          @include theme_panel_line(border-bottom, 1px, solid);
+          @include justify-content(space-between);
+        }
+        &.navigation-list{
+          &:hover{
+            @include theme_leftMenu_select();
+          }
+          &.active{
+            @include theme_leftMenu_select();
+          }
+        }
+        .list-name{
+          opacity: 1;
+          display: inline-block;
+          width: auto;
+          overflow: hidden;
+          transition: width $second ease-in-out $delay-time;
+          -webkit-transition: width $second ease-in-out $delay-time;
+          -moz-transition: width $second ease-in-out $delay-time;
+          transition: opacity $second ease-in-out $delay-time;
+          -webkit-transition: opacity $second ease-in-out $delay-time;
+          -moz-transition: opacity $second ease-in-out $delay-time;
+        }
+        .collapse-icon{
+          font-size: 18px;
+          margin-right: 10px;
+          transition: transform $second ease,
+          -webkit-transform $second ease;
+          -webkit-transition: transform $second ease,
+          -webkit-transform $second ease;
+          -moz-transition: transform $second ease,
+          -webkit-transform $second ease;
+        }
+      }
+    }
+  }
+  &.isCollapse{
+    .navigation-bar{
+      @include flex(0, 0, 20px);
+      ul{
+        li{
+          padding-left: 0;
+          .list-name{
+            width: 0;
+            opacity: 0;
+          }
+          &.active{
+            background-color: transparent;
+          }
+          &:hover{
+            @include theme_B1();
+          }
+          .collapse-icon{
+            margin-left: 6px;
+            transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+  .godon-mainframe{
+    @include flex(1, 1, auto);
+  }
+}
+.mainframe-content{
+  height: 100%;
+  @include display-flex();
+  .mainframe-content-layout{
+    height: 100%;
+    @include flex(1, 1, auto);
+    .godon-layout-main{
+      height: calc(100% - 37px);
+      @include theme_panel_body();
+    }
+  }
+}
+/**
+ * @Descripttion: pannel css module
+ * @Author: zhusn-b
+ */
+.godon-main-panel{
+  height: 36px;
+  padding: 0 12px;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(space-between);
+  @include theme_panel_font();
+  @include theme_mainbg();
+  font-size: 14px;
+  @include theme_panel_line(border-bottom, 1px, solid);
+  .panel-oprator{
+    @include theme_icon();
+  }
+}
+.mainframe-content-model{
+  position: relative;
+  @include flex(0, 0, 300px);
+  @include theme_panel_line(border-left, 1px, solid);
+  .model-main{
+    height: calc(100% - 37px);
+    overflow-y: auto;
+    @include theme_panel_body();
+    padding: 0 12px;
+    .project{
+      padding: 12px 0;
+    }
+    .classification{
+      padding: 0px 12px 12px 0;
+    }
+    &.non-padding{
+      padding: 0;
+    }
+  }
+  &.new-mod{
+    @include flex(1, 1, auto);
+    border-left: none;
+    .model-main{
+      padding: 12px 0 12px 12px;
+      @include box-sizing();
+      @include display-flex();
+      .godon-model{
+        @include flex(1, 1, auto);
+        .godon-model-content{
+          width: 100%;
+          position: relative;
+          background: #D8D8D8;
+          height: 100%;
+          display: inline-block;
+        }
+      }
+      .middle-model{
+        @include flex(0, 0, 463px);
+        @include box-sizing();
+        padding: 0 0 0 12px;
+      }
+    }
+  }
+  &.build-mod{
+    @include flex(1, 1, auto);
+    border-left: none;
+    .model-main{
+      padding: 0px;
+      height: calc(100% - 69px);
+      @include box-sizing();
+      @include display-flex();
+      .godon-model{
+        @include flex(1, 1, auto);
+        position: relative;
+        .godon-model-content{
+          width: 100%;
+          position: relative;
+          background: #D8D8D8;
+          height: 100%;
+          &.black{
+            background: #000;
+          }
+        }
+      }
+      .middle-model{
+        @include flex(0, 0, 463px);
+        @include box-sizing();
+        padding: 0 0 0 12px;
+      }
+    }
+  }
+  &.detail-mod{
+    @include flex(0, 0, 465px);
+    .model-main{
+      padding: 12px 0 12px 12px;
+      @include box-sizing();
+      @include display-flex();
+      .godon-model{
+        @include flex(1, 1, auto);
+        .godon-model-content{
+          width: 100%;
+          background: #D8D8D8;
+          position: relative;
+          height: 264px;
+          display: inline-block;
+        }
+      }
+      .middle-model{
+        @include flex(0, 0, 453px);
+        @include box-sizing();
+        padding: 0;
+      }
+    }
+  }
+  &.lg-mod {
+    @include flex(0, 0, 850px);
+  }
+  &.pd-model{
+    .model-main{
+      padding: 12px;
+    }
+  }
+}
+.tab-origin{
+  margin: 24px 0;
+  text-align: center;
+  .iconfont{
+    font-size: 24px;
+    color: #3c689c;
+  }
+}
+.godon-form-collapse{
+  .collapse-panel{
+    height: 32px;
+    @include display-flex();
+    margin-top: 12px;
+    @include align-items(center);
+    padding: 0 4px;
+    font-size: 14px;
+    @include theme_panel_font();
+    @include theme_collapse_panel_bg();
+    border-top: 1px solid #596370;
+    border-bottom: 1px solid #596370;
+    .arrow{
+      &.close{
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+      }
+    }
+    .title{
+      margin-left: 5px;
+    }
+    &.mt0{
+      margin-top: 0;
+    }
+  }
+  .collapse-content{
+    margin-top: 12px;
+    padding: 0 12px;
+  }
+}
+.table-set{
+  @include display-flex();
+  .set-label{
+    width: 120px;
+    height: 191px;
+    @include theme_table_line(border, 1px, solid);
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    @include theme_panel_font();
+  }
+}
+.panel-header{
+  @include theme_panel_font();
+  padding: 12px 0;
+  font-size: 12px;
+  span{
+    cursor: pointer;
+  }
+}
+.flex20{
+  @include flex(0, 0, 20px);
+}
+.godon-model-footer{
+  height: 32px;
+  @include theme_mainbg();
+  @include theme_panel_font();
+  font-size: 14px;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(space-between);
+  .footer-tools{
+    @include display-flex();
+    height: 100%;
+    @include align-items(center);
+    .tools-text{
+      padding: 0 10px;
+      cursor: pointer;
+      height: 32px;
+      line-height: 32px;
+      position: relative;
+      &.left-line{
+        @include theme_footer_line(border-left, 1px, solid); 
+      }
+    }
+  }
+}
+.view-port{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 120px;
+  height: 40px;
+  @include flex-wrap(wrap);
+  background: transparent;
+  @include display-flex();
+  @include flex-direction-column();
+  @include theme_tools_bg();
+  border-radius: 4px;
+  .view-item{
+    @include display-flex();
+    .item-icon{
+      @include flex(0, 0, 40px);
+      height: 40px;
+      @include box-sizing();
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      @include theme_panel_font();
+      .iconfont{
+        font-size: 20px;
+      }
+      &.border-br{
+        @include theme_border_tool(border-bottom, 1px, solid);
+        @include theme_border_tool(border-right, 1px, solid);
+      }
+      &.border-b{
+        @include theme_border_tool(border-bottom, 1px, solid);
+      }
+      &.border-r{
+        @include theme_border_tool(border-right, 1px, solid);
+      }
+      &.active{
+        @include theme_leftMenu_select();
+      }
+    }
+  }
+}
+.building-tools{
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  @include flex-wrap(wrap);
+  background: transparent;
+  @include display-flex();
+  .godon-form{
+    .mid-height{
+      .el-input__inner{
+        height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+  .godon-input__inder{
+    &.m-input{
+      height: 24px;
+    }
+  }
+  .tools-item{
+    height: 40px;
+    // transition: height  $second ease-in;
+    // -webkit-transition: height  $second ease-in;
+    // -moz-transition: height  $second ease-in;
+    @include display-flex();
+    @include align-items(center);
+    @include theme_tools_bg();
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 18px;
+    margin-left: 12px;
+    color: #ffffff;
+    .tools-item-mod{
+      position: relative;
+      height: 100%;
+      @include display-flex();
+      &.icon-mod{
+        @include flex-direction-column();
+        @include justify-content(center);
+        padding: 0 8px;
+        &.active{
+          color: #5291dd;
+          .iconfont{
+            color: #5291dd;
+          }
+        }
+      }
+      .license{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+      }
+      .icon-tip{
+        height: 19px;
+        line-height: 19px;
+        display: none;
+        text-align: center;
+      }
+      cursor: pointer;
+    }
+    .tools-item-line-mod{
+      height: 100%;
+      @include display-flex();
+      &.icon-mod{
+        @include align-items(center);
+        padding-left: 12px;
+      }
+      .icon-tip{
+        height: 19px;
+        line-height: 19px;
+        display: none;
+        text-align: center;
+      }
+      .text-tip{
+        white-space: nowrap;
+        margin-right: 8px;
+      }
+      cursor: pointer;
+    }
+    .tools-icon{
+      font-size: 24px;
+      color: #ffffff;
+      &.disabled{
+        color: rgba(255,255,255,.2);
+      }
+    }
+    .iconshenhui7{
+      transition: transform  $second ease-in-out;
+      -webkit-transition: transform  $second ease-in-out;
+      -moz-transition: transform  $second ease-in-out;
+    }
+  }
+  &.collapse{
+    .tools-item{
+      height: 60px;
+      .tools-item-mod{
+        &.icon-mod{
+          padding: 0 18px;
+        }
+      }
+      .icon-tip{
+        display: block;
+      }
+    }
+    .godon-form{
+      .mid-height{
+        .el-input__inner{
+          height: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+    .godon-input__inder{
+      &.m-input{
+        height: 32px;
+      }
+    }
+    .iconshenhui7{
+      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+    }
+  }
+}
+.geometry{
+  padding: 0 12px;
+  &.pl0{
+    padding-left: 0px;
+  }
+  .geometry-checkbox{
+    @include theme_select_body_font();
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    .el-checkbox__input.is-checked+.el-checkbox__label{
+      @include theme_select_body_font();
+    }
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+      @include theme_btn_border_blue();
+      @include theme_btn_lg_hover();
+    }
+  }
+}
+.mini-model{
+  @include flex(0, 0, 200px);
+  @include box-sizing();
+  &.child-model{
+    @include flex(0, 0, 240px);
+    z-index: 1;
+    @include box_shadow_model();
+  }
+}
+.depframe-content-model{
+  .godon-main-panel{
+    border-left: none;
+  }
+  .model-content-body{
+    padding: 12px;
+    .build-creat{
+      font-size: 12px;
+      height: 32px;
+      line-height: 32px;
+      @include theme_panel_font();
+      i{
+        margin-left: 7px;
+        font-size: 16px;
+      }
+      span{
+        margin-left: 4px;
+      }
+    }
+    .tree-level{
+      @include display-flex();
+      margin-bottom: 10px;
+      .level{
+        height: 24px;
+        line-height: 24px;
+        @include flex(1, 1, auto);
+        @include theme_table_tbody_bg();
+        font-size: 12px;
+        text-align: center;
+        @include theme_table_tbody_font();
+        &.border-left{
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+        &.border-right{
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+        &.current{
+          @include theme_table_thead_bg();
+        }
+      }
+    }
+  }
+}
+.godon-textarea{
+  width: 100%;
+  padding: 4px;
+  font-size: 12px;
+}
+.table-collapse{
+  text-align: center;
+  margin-top: 8px;
+  .iconfont{
+    font-size: 14px;
+    margin-top: -2px;
+    transition: transform $second ease-in-out;
+    -webkit-transition: transform $second ease-in-out;
+    -moz-transition: transform $second ease-in-out;
+    &.active{
+      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+    }
+  }
+}
+.godon-model-len-content{
+  padding: 12px 11px;
+}
+.godon-model-nav{
+  width: 100%;
+  @include display-flex();
+  height: 30px;
+  @include theme_panel_font();
+  font-size: 12px;
+  li{
+    height: 100%;
+    margin-bottom: 2px;
+    flex: 1;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    @include theme_footer_line(border-bottom, 1px, solid);
+    &.current{
+      @include theme_nav_line(border-bottom, 1px, solid);
+    }
+  }
+}
+.model-add{
+  text-align: right;
+  height: 32px;
+  line-height: 32px;
+  i{
+    margin-right: 7px;
+    @include theme_panel_font();
+  }
+}
+.godon-model-block{
+  @include display-flex();
+  @include theme_mainbg();
+  @include theme_panel_font();
+  height: 88px;
+  position: relative;
+  .model-block-canvas{
+    @include flex(0, 0, 88px);
+    display: inline-block;
+    background: #D8D8D8;
+  }
+  .model-block-info{
+    &.active{
+      @include theme_leftMenu_select();
+    }
+    &.center{
+      @include justify-content(center);
+    }
+    position: relative;
+    @include flex(1, 1, auto);
+    @include display-flex();
+    @include flex-direction-column();
+    padding-left: 8px;
+    .arrow{
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 18px;
+      top: 32px;
+      right: 15px;
+      i{
+        font-size: 22px;
+        transition: transform $second ease-in-out;
+        -webkit-transition: transform $second ease-in-out;
+        -moz-transition: transform $second ease-in-out;
+      }
+      .active{
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+      }
+    }
+    .name{
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      @include display-flex();
+      @include justify-content(space-between);
+      @include align-items(center);
+    }
+    .des{
+      margin-top: 2px;
+      width: 150px;
+      font-size: 12px;
+      height: 19px;
+      line-height: 19px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .class{
+      margin-top: 10px;
+      height: 17px;
+      width: fit-content;
+      line-height: 17px;
+      font-size: 12px;
+      border-radius:4px;
+      padding: 0 2px;
+      display: inline-block;
+      border:1px solid rgba(110,123,139,1);
+    }
+  }
+  .model-block-level{
+    @include display-flex();
+  }
+  .model-list{
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 278px;
+    z-index: 10;
+    max-height: 560px;
+    @include theme_panel_body();
+    @include theme_panel_font();
+    transition: height $second ease-in-out;
+    -webkit-transition: height $second ease-in-out;
+    -moz-transition: height $second ease-in-out;
+    font-size: 12px;
+    box-shadow:0px 0px 3px 2px rgba(0,0,0,0.3);
+    &.active{
+      height: 0;
+    }
+    .model-item{
+      padding-bottom: 14px;
+      .item-head{
+        height: 36px;
+        font-size: 14px;
+        @include display-flex();
+        @include align-items(center);
+        @include theme_mainbg();
+        .canvans{
+          height: 36px;
+          width: 36px;
+          display: inline-block;
+          background: #D8D8D8;
+        }
+        .name{
+          margin-left: 12px;
+        }
+      }
+      .item-list{
+        height: 32px;
+        @include display-flex();
+        @include align-items(center);
+        padding-left: 8px;
+        &.active{
+          @include theme_leftMenu_select();
+        }
+        &:hover{
+          @include theme_leftMenu_select();
+        }
+        .name{
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+.godon-model-content{
+  .tip{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 30px 0 10px;
+    @include theme_tools_bg();
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+.godon-slider{
+  &.up-above{
+    position: absolute;
+    width: 100%;
+    .el-slider__button{
+      background: #4BAF65;
+    }
+  }
+  .el-slider__button{
+    width: 14px;
+    height: 14px;
+  }
+}
+.godon-input{
+  .godon-slider{
+    &.up-above{
+      .el-slider__runway{
+        .el-slider__button{
+          background: #4BAF65;
+          border: 1px solid #fff;
+        }
+      }
+    }
+    &.range{
+      .el-slider__runway{
+        .el-slider__button-wrapper{
+          .el-slider__button{
+            background: #397DCA;
+            border: 1px solid #fff;
+          }
+        }
+        div:first-child + div{
+          .el-slider__button{
+            background: #CB5252;
+            border: 1px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.port-label{
+  width: 80px;
+  height: 24px;
+  @include align-items(center);
+  .label{
+    display: inline-block;
+    width:10px;
+    border-radius: 50%;
+    height:10px;
+    border:1px solid rgba(255,255,255,1);
+    &.left{
+      background:rgba(203,82,82,1);
+    }
+    &.center{
+      background:#397DCA;
+    }
+    &.right{
+      background:#4BAF65;
+    }
+  }
+  .text{
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}
+.godon-model-tip{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
+  .tip-content{
+    width: 510px;
+    height: 210px;
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include theme_panel_body();
+    border-radius: 4px;
+    .iconfont{
+      font-size: 96px;
+      margin-top: 30px;
+    }
+    p{
+      margin-top: 26px;
+    }
+  }
+}
+.commond-center{
+  position: relative;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  height: 56px;
+  .search{
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin-left: 10px;
+    @include theme_W1();
+    @include box-sizing();
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    border-radius: 4px;
+    @include theme_L3_split(border, 1px, solid);
+  }
+  .branch-commond{
+    position: absolute;
+    height: 56px;
+    right: 0;
+    @include display-flex();
+    @include align-items(center);
+    @include theme_panel_font();
+    &.before{
+      left: 0;
+      right: auto;
+    }
+    .back{
+      font-size: 12px;
+    }
+  }
+}
+.commond-left{
+  position: relative;
+  @include align-items(center);
+  @include display-flex();
+  height: 56px;
+  .search{
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin-right: 10px;
+    @include theme_W1();
+    @include box-sizing();
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    border-radius: 4px;
+    @include theme_L3_split(border, 1px, solid);
+  }
+}
+.build-branch-content{
+  width: 100%;
+  @include display-flex();
+}
+.flex-space-around{
+  @include justify-content(space-around);
+}
+.flex-space-between{
+  @include justify-content(space-between);
+}
+.flex-space-start{
+  @include justify-content(flex-start);
+}
+.flex-space-center{
+  @include justify-content(center);
+}

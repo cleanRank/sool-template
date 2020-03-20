@@ -1,0 +1,521 @@
+.godon-table{
+  // height: 100%;
+  width: 100%;
+  position: relative;
+  &.overflow-table{
+    .el-table{
+      overflow: unset;
+    }
+    .el-table__body-wrapper{
+      overflow: unset;
+    }
+  }
+  &.static-height193{
+    height: 193px;
+  }
+  &.border-table{
+    .el-table--border{
+      @include theme_table_line(border, 1px, solid);
+      border-bottom: none!important;
+      border-right: none!important;
+      &::after{
+        width: 0;
+      }
+    }
+    .el-table--group{
+      &::after{
+        width: 0;
+      }
+    }
+  }
+  .el-table{
+    // height: calc(100% - 32px);
+    font-size: 12px;
+    overflow: auto;
+    @include theme_mainbg();
+    @include theme_table_tbody_font();
+    table{
+      width: auto!important;
+    }
+    tr{
+      &:hover{
+        @include theme_table_float();
+      }
+    }
+    td{
+      padding: 0 0;
+      height: 32px;
+      line-height: 32px;
+    }
+    th{
+      padding: 0 0;
+      height: 32px;
+      line-height: 32px;
+    }
+    &::before{
+      background-color: transparent!important;
+    }
+    .godon-striped{
+      .godon-table-rowspan{
+        @include theme_table_tbody_bg2();
+      }
+    }
+    thead{
+      .godon-table-rowspan{
+        border-bottom: none;
+        @include theme_table_thead_bg();
+        @include theme_table_thead_font();
+      }
+    }
+    &.el-table--border{
+      @include theme_table_line(border-left, 1px, solid);
+      @include theme_table_line(border-top, 1px, solid);
+    }
+    &.el-table--border td, .el-table--border th, &.el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed{
+      @include theme_table_line(border-right, 1px, solid);
+    }
+    &.el-table td, &.el-table th.is-leaf{
+      @include theme_table_line(border-bottom, 1px, solid);
+    }
+    &.el-table--border{
+      thead{
+        th{
+          border-right: none;
+          &.is-leaf{
+            @include theme_table_line(border-right, 1px, solid);
+            @include theme_table_line(border-left, 1px, solid);
+          }
+        }
+      }
+    }
+    &.el-table--border::after, &.el-table--group::after, &.el-table::before{
+      background: transparent;
+    }
+    tbody{
+      tr{
+        &:hover{
+          .table-scope-cell{
+            .oprator-hover{
+              display: block;
+            }
+          }
+        }
+      }
+      .el-table__row{
+        &.current-row{
+          td{
+            @include theme_table_float();
+          }
+        }
+      }
+      .godon-table-rowspan{
+        // border-bottom: none;
+        @include theme_table_tbody_bg();
+        &.edit-table-column{
+          .cell{
+            padding: 0;
+            overflow: unset;
+          }
+        }
+        .table-href{
+          cursor: pointer;
+        }
+        .el-table__expand-icon{
+          @include theme_table_thead_font();
+        }
+        .icon-table-oprator{
+          font-size: 18px;
+          @include theme_table_thead_font();
+        }
+        .icon-table-edit{
+          font-size: 16px;
+          @include theme_table_thead_font();
+        }
+        .state-1{
+          color: #090;
+        }
+        .state-2{
+          color: #c19c3d;
+        }
+        .state-3{
+          color: #D93026;
+        }
+        .tablespan{
+          display: inline-block;
+        }
+        .firstchild{
+          margin-left: 23px;
+        }
+        .eslipse{
+          max-width: 160px;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        .hover-block{
+          display: none;
+        }
+      }
+      .el-table__row{
+        &:hover{
+          .hover-block{
+            display: block;
+          }
+        }
+      }
+      .table-input{
+        height: 28px;
+        line-height: 28px;
+        @include box-sizing();
+        border-radius: 2px;
+        width: 100%;
+      }
+    }
+    .godon-table-leftCell{
+      padding-left: 40px;
+    }
+    .godon-table-rightCell{
+      padding-right: 40px;
+    }
+    .godon-table-chart{
+      padding-left: 0;
+      .cell{
+        position: relative;
+        .master{
+          position: absolute;
+          height: 100%;
+          width: 2px;
+          background:rgba(24,144,255,1);
+          left: 9px;
+          .circel{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background:rgba(24,144,255,1);
+            border:1px solid rgba(29,33,37,1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &.firster{
+            height: 50%;
+            bottom: 0;
+            .circel{
+              top: 0;
+              border: 2px solid #fff;
+            }
+            .checkout-b{
+              top: -11px;
+            }
+          }
+          &.laster{
+            height: 50%;
+            top: 0;
+            .circel{
+              bottom: 0;
+              transform: translate(-50%, 0);
+            }
+          }
+          &.branch-one{
+            .push{
+              background: #52C41A;
+            }
+          }
+          &.branch-two{
+            background: #52C41A;
+            left: 26px;
+            .circel{
+              background: #52C41A;
+            }
+            .checkout-b{
+              background: #FADB14;
+            }
+            .pull{
+              background: rgba(24,144,255,1);
+            }
+            .push{
+              background: #52C41A;
+            }
+          }
+          &.branch-three{
+            background: #FADB14;
+            left: 43px;
+            .circel{
+              background: #FADB14;
+            }
+            .checkout-b{
+              background: #FA541C;
+            }
+            .pull{
+              background: #52C41A;
+            }
+            .push{
+              background: #FADB14;
+            }
+          }
+          &.branch-four{
+            background: #FA541C;
+            left: 60px;
+            .circel{
+              background: #FA541C;
+            }
+            .checkout-b{
+              background: #FA541C;
+            }
+            .pull{
+              background: #FADB14;
+            }
+            .push{
+              background: #FA541C;
+            }
+          }
+          .checkout-b{
+            width: 20px;
+            height: 2px;
+            position: absolute;
+            top: 5px;
+            border-radius: 4px;
+            left: 1px;
+            z-index: 100;
+            background: #52C41A;
+            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+          }
+          .pull{
+            width: 18px;
+            height: 2px;
+            position: absolute;
+            top: 21px;
+            border-radius: 4px;
+            left: -15px;
+            z-index: 100;
+            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+          }
+          .push{
+            width: 18px;
+            height: 2px;
+            position: absolute;
+            top: 23px;
+            border-radius: 4px;
+            left: 2px;
+            z-index: 100;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .cell{
+      height: 100%;
+      @include display-flex();
+      @include align-items(center);
+      .table-scope-cell{
+        width: 100%;
+        height: 100%;
+        padding: 0 12px;
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(space-between);
+        position: relative;
+        .oprator-hover{
+          display: none;
+        }
+        &.overflow{
+          overflow: hidden;
+          span{
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .branch-circle{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .isActivity{
+        background: #fff;
+        border: 1px solid #fff;
+      }
+      .noActivity{
+        background: transparent;
+        border: 1px solid #fff;
+      }
+    }
+    &.godon-table-irregular{
+      tbody{
+        .el-table__row{
+          position: relative;
+        }
+        td{
+          position: inherit;
+        }
+      }
+      .godon-table-tr-input{
+        position: absolute;
+        @include display-flex();
+        @include align-items(center);
+        left: 0;
+        height: 32px;
+      }
+    }
+  }
+  .el-table__empty-block{
+    width: auto!important;
+  }
+  .el-table--enable-row-hover .el-table__body tr:hover>td {
+    @include theme_table_float();
+  }
+  .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+    background-color: transparent;
+    @include theme_W1();
+    @include theme_border_c_S0(border, 1px, solid);
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    min-width: 32px;
+    box-sizing: border-box;
+  }
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    @include theme_border_c_B1(border, 1px, solid);
+    @include theme_B1();
+  }
+  .el-pagination{
+    font-weight: 400;
+  }
+  .godon-pagination{
+    text-align: right;
+    padding-right: 0;
+    margin-top: 12px;
+    &.el-pagination{
+      &.is-background{
+        .btn-next{
+          margin-right: 0;
+          @include theme_W1();
+        }
+        .btn-prev{
+          @include theme_W1();
+        }
+      }
+      .el-pagination__total{
+        @include theme_W1();
+      }
+    }
+  }
+}
+.el-popper .popper__arrow, .el-popper .popper__arrow::after{
+  display: none!important;
+}
+.godon-timepick{
+  &.el-popper[x-placement^=top]{
+    margin-bottom: 0;
+  }
+  &.el-popper[x-placement^=bottom]{
+    margin-top: 0;
+  }
+  &.el-picker-panel{
+    @include theme_datepicker();
+    @include theme_datepicker_font();
+    border: none;
+    margin: 0;
+    .el-date-table{
+      th{
+        @include theme_L4_split(border-bottom, 1px, solid);
+        @include theme_L4_split(border-top, 1px, solid);
+        padding: 0;
+        text-align: center;
+        @include theme_datepicker_font();
+      }
+      td{
+        width: 21px;
+        padding: 2px 0;
+        height: 21px;
+        &.today{
+          span{
+            @include theme_datepicker_today();
+            font-weight: 400;
+          }
+        }
+        div{
+          height: 21px;
+        }
+        span{
+          border-radius: 2px;
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+        }
+        &.current{
+          &:not(.disabled){
+            span{
+              @include theme_datepicker_active();
+              @include theme_datepicker_font();
+            }
+          }
+        }
+      }
+    }
+    .el-year-table{
+      td{
+        .cell{
+          @include theme_datepicker_font();
+        }
+        &.today{
+          .cell{
+            color: #409EFF; 
+          }
+        }
+      }
+    }
+    .el-month-table{
+      td{
+        .cell{
+          @include theme_datepicker_font();
+        }
+        &.today{
+          .cell{
+            color: #409EFF; 
+          }
+        }
+      }
+    }
+    &.el-date-picker{
+      .el-picker-panel__content{
+        width: auto;
+      }
+    }
+    .el-date-picker__header{
+      margin: 0;
+      padding: 4px 12px;
+      .el-picker-panel__icon-btn{
+        @include theme_datepicker_font();
+        margin-top: 10px;
+      }
+      .el-date-picker__header-label{
+        @include theme_datepicker_font();
+        font-size: 12px;
+      }
+    }
+    .el-picker-panel__content{
+      margin: 0;
+      padding-bottom: 12px;
+    }
+  }
+  &.el-date-picker{
+    width: 210px;
+  }
+}

@@ -1,0 +1,325 @@
+@charset "utf-8";
+@import "app";
+
+//按钮通用样式
+@mixin btnCss($w,$h,$bjc,$fc){
+  @include wh($w,$h);
+  line-height: $h;
+  margin: 0 auto;
+  background: $bjc;
+  color:$fc;
+  border-radius: $h/2;
+  display:block;
+  text-align: center;
+  overflow: hidden;
+}
+//按钮通用样式
+@mixin btnNote($w,$h,$bjc,$fc,$fz){
+  @include wh($w,$h);
+  line-height: $h;
+  margin: 0 auto;
+  background: $bjc;
+  color:$fc;
+  border-radius: $h/2;
+  display:inline-block;
+  font-size: $fz;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $bjc;
+  overflow: hidden;
+}
+//按钮通用样式
+@mixin btnScss($w, $h, $bjc, $fc, $fz, $br:4px, $bc: 0) {
+  @if $bc == none {
+    border: none;
+  }@else {
+    border-width: 1px;
+    border-style: solid;
+    border-color: $bjc;
+  }
+  @include wh($w, $h);
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  background: $bjc;
+  color: $fc;
+  border-radius: $br;
+  display: inline-block;
+  font-size: $fz;
+  overflow: hidden;
+}
+@mixin btn_B1($w, $h, $fc, $fz, $br:4px, $bc: 0) {
+  @include wh($w, $h);
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  @include theme_B1();
+  @include theme_border_c_B1(border, 1px, solid);
+  color: $fc;
+  border-radius: $br;
+  display: inline-block;
+  font-size: $fz;
+  overflow: hidden;
+}
+@mixin btn_S0($w, $h, $fc, $fz, $br:4px, $bc: 0) {
+  @include wh($w, $h);
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  @include theme_S0();
+  @include theme_border_c_S0(border, 1px, solid);
+  color: $fc;
+  border-radius: $br;
+  display: inline-block;
+  font-size: $fz;
+  overflow: hidden;
+}
+@mixin btn-lg-blue {
+  font-size: 16px;
+  @include theme_btn_lg();
+  &:hover{
+    @include theme_btn_lg_hover();
+  }
+  &:active{
+    @include theme_btn_lg_active();
+  }
+  &.disabled{
+    @include theme_btn_lg_disabled()
+  }
+}
+@mixin btn_blue{
+  font-size: 12px;
+  @include theme_btn_blue();
+  &:hover{
+    @include theme_btn_blue_hover();
+  }
+  &:active{
+    @include theme_btn_blue_active();
+  }
+  &.disabled{
+    @include theme_btn_blue_disabled()
+  }
+}
+@mixin btn_gray{
+  font-size: 12px;
+  @include theme_btn_gray();
+  &:hover{
+    @include theme_btn_gray_hover();
+  }
+  &:active{
+    @include theme_btn_gray_active();
+  }
+  &.disabled{
+    @include theme_btn_gray_disabled()
+  }
+}
+@mixin btn_border_blue{
+  @include theme_btn_border_blue();
+  &:hover{
+    @include theme_btn_border_blue_hover();
+  }
+  &:active{
+    @include theme_btn_border_blue_active();
+  }
+  &.disabled{
+    @include theme_btn_border_blue_disabled()
+  }
+}
+@mixin btn_border_gray{
+  font-size: 12px;
+  @include theme_btn_border_gray();
+  &:hover{
+    @include theme_btn_border_gray_hover();
+  }
+  &:active{
+    @include theme_btn_border_gray_active();
+  }
+  &.disabled{
+    @include theme_btn_border_gray_disabled()
+  }
+}
+@mixin btn_component ($w, $h){
+  width: $w;
+  height: $h;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  border-radius: 4px;
+  display: inline-block;
+  overflow: hidden;
+  @include box-sizing();
+}
+.btn.btn-blue{
+  @include btnNote(120, 44, #338FFB, #fff, 24);
+}
+.btn.btn-blue-main{
+  @include btnNote(152, 50, #338FFB, #fff, 28);
+}
+.btn.btn-blue-big{
+  @include btnNote(124, 40, #FF5F75, #fff, 28);
+  font-weight: 600;
+  border-width: 1;
+  border-style: solid;
+  border-color: #FF5F75;
+}
+.btn.btn-orange{
+  @include btnNote(120, 44, #FFB623, #fff, 24);
+}
+.btn.btn-orange-main{
+  @include btnNote(152, 50, #FFB623, #fff, 28);
+  border-width: 1;
+  border-style: solid;
+  border-color: #FFB623;
+}
+.btn.btn-orange-big{
+  @include btnNote(124, 40, #FFB623, #fff, 28);
+  font-weight: 600;
+  border-width: 1;
+  border-style: solid;
+  border-color: #FFB623;
+}
+.btn.btn-defalut{
+  @include btnNote(120, 44, #fff, #B3B3B3, 24);
+  border-width: 1;
+  border-style: solid;
+  border-color: #B3B3B3;
+}
+.btn.btn-defalut-big{
+  @include btnNote(124, 40, #fff, #B3B3B3, 28);
+  font-weight: 600;
+  border-width: 1;
+  border-style: solid;
+  border-color: #B3B3B3;
+}
+.btn.btn-defalut-2{
+  @include btnNote(160, 52, #fff, #999, 30);
+  border-width: 1;
+  border-style: solid;
+  border-color: #999;
+}
+.btn.btn-confirm-2{
+  @include btnNote(160, 52, #FF455F, #fff, 30);
+  border-width: 1;
+  border-style: solid;
+  border-color: #FF455F;
+}
+.btn.btn-defalut-main{
+  @include btnNote(152, 50, #fff, #B3B3B3, 28);
+  border-width: 1;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #B3B3B3;
+}
+.btn.btn-reset{
+  @include btnNote(160, 52, #fff, #FF455F, 28);
+  border-width: 1;
+  border-style: solid;
+  border-color: #FF455F;
+}
+.btn.btn-ok{
+  @include btnNote(160, 52, #FF455F, #fff, 28);
+  border-width: 1;
+  border-style: solid;
+  border-color: #FF455F;
+}
+.btn.btn-theme {
+  @include btnScss(580, 90, #0087FF, #fff, 36);
+}
+.btn-add-item {
+  @include btnScss(82, 48, #0087FF, #fff, 28);
+}
+.create-btn{
+  @include btn_S0(98px, 32px, #fff, 12px, 4px);
+}
+.item-edit-btn{
+  @include btn_component(276px, 32px);
+  @include btn_blue();
+}
+.item-gray-btn{
+  @include btn_component(132px, 32px);
+  @include btn_gray();
+  &.lg-btn{
+    width: 212px;
+  }
+}
+.item-blue-btn{
+  @include btn_component(132px, 32px);
+  @include btn_blue();
+  &.lg-btn{
+    width: 212px;
+  }
+  &.mid-btn{
+    width: 102px;
+  }
+  &.m-btn{
+    width: 90px;
+  }
+  &.max-btn{
+    width: 100%;
+  }
+  &.mini-btn{
+    width: 85px;
+  }
+}
+.item-gray-boder-btn{
+  @include btn_component(132px, 32px);
+  @include btn_border_gray();
+  &.lg-btn{
+    width: 212px;
+  }
+  &.mid-btn{
+    width: 102px;
+  }
+  &.w-btn{
+    width: 100%;
+  }
+  &.m-btn{
+    width: 90px;
+  }
+  &.mini-btn{
+    width: 85px;
+  }
+  &.mini-height{
+    height: 24px;
+  }
+  &.mini-form-btn{
+    width: 60px;
+    height: 24px;
+  }
+  &.m-form-btn{
+    width: 88px;
+    height: 24px;
+  }
+  &.m-table-btn{
+    width: 80px;
+    height: 12px;
+  }
+  &.m-filter-btn{
+    width: 32px;
+    height: 32px;
+  }
+}
+.login-confirm-btn{
+  @include btn_S0(300px, 44px, #fff, 14px, 5px);
+}
+.mechanism-register-btn{
+  @include btn_S0(98px, 32px, #fff, 14px, 4px);
+}
+.btn-apply-default{
+  @include btn_S0(72px, 32px, #fff, 12px, 4px);
+}
+.default-btn{
+  @include btn_S0(88px, 24px, #fff, 12px, 4px);
+}
+.temp-create{
+  @include btn_component(100px, 32px);
+  @include btn_blue();
+}
+
+.btn-head-default{
+  @include btn_B1(68px, 24px, #fff, 12px, 4px);
+}
+.btn-head-cancel{
+  @include btn_B1(267px, 32px, #fff, 12px, 4px);
+}

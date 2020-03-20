@@ -1,0 +1,32 @@
+.dashboard-container{
+  padding: 30px 0 0 44px;
+  @include box-sizing(border-box);
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include align-content(flex-start);
+  .dashboard-mod-item{
+    width: 292px;
+    height: 192px;
+    @include box-sizing(border-box);
+    @include theme_A1();
+    @include theme_W1();
+    @include theme_boxshown_head();
+    margin: 0 8px 8px 0;
+    font-size: 12px;
+    .mod-item-head{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 14px;
+      @include theme_L2_split(border-bottom, 1px, solid);
+      .title{
+        margin-left: 12px;
+      }
+    }
+    .mod-item-content{
+      padding: 12px;
+      .item-formline{
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

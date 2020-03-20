@@ -1,0 +1,967 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: zhusn-b
+ * @Date: 2019-09-03 10:56:23
+ * @LastEditors: zhusn-b
+ * @LastEditTime: 2019-11-12 14:13:39
+ */
+/**
+ * @Descripttion: headmixin
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+@mixin theme_A1 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_A1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_A1;
+  }
+}
+@mixin theme_A2 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_A2;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_A2;
+  }
+}
+@mixin theme_A3 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_A3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_A3;
+  }
+}
+@mixin theme_A4 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_A4;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_A4;
+  }
+}
+@mixin theme_B1 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_B1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_B1;
+  }
+}
+@mixin theme_color_B1 () {
+  [data-theme='theme_problack'] & {
+    color: $black_B1;
+  }
+  [data-theme='theme_ivory'] & {
+    color: $white_B1;
+  }
+}
+@mixin theme_border_c_B1 ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_B1;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_B1;
+  }
+}
+@mixin theme_nav_line ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $B11;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $T10;
+  }
+}
+@mixin theme_border_tool ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $B26;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $B26;
+  }
+}
+@mixin theme_B2 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_B2;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_B2;
+  }
+}
+@mixin theme_L1_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L1;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L1;
+  }
+}
+@mixin theme_L2_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L2;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L2;
+  }
+}
+@mixin theme_L2_bg () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_L2;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_L2;
+  }
+}
+@mixin theme_L3 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_L3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_L3;
+  }
+}
+@mixin theme_L3_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L3;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L3;
+  }
+}
+@mixin theme_L4_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L4;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L4;
+  }
+}
+@mixin theme_L5_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L5;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L5;
+  }
+}
+@mixin theme_L5_splitIm ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L5!important;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L5!important;
+  }
+}
+@mixin theme_L6_split ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_L6;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_L6;
+  }
+}
+@mixin theme_T0 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_T0;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_T0;
+  }
+}
+@mixin theme_T1 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_T1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_T1;
+  }
+}
+@mixin theme_T2 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_T2;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_T2;
+  }
+}
+@mixin theme_T3 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_T3!important;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_T3;
+  }
+}
+@mixin theme_W1 () {
+  [data-theme='theme_problack'] & {
+    color:  $black_W1;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_W1;
+  }
+}
+@mixin theme_W2 () {
+  [data-theme='theme_problack'] & {
+    color:  $black_W2;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_W2;
+  }
+}
+@mixin theme_W3 () {
+  [data-theme='theme_problack'] & {
+    color:  $black_W3;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_W3;
+  }
+}
+@mixin theme_W4 () {
+  [data-theme='theme_problack'] & {
+    color:  $black_W4;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_W4;
+  }
+}
+@mixin theme_W5 () {
+  [data-theme='theme_problack'] & {
+    color:  $black_W5;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_W5;
+  }
+}
+@mixin theme_S0 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_S0;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_S0;
+  }
+}
+@mixin theme_border_c_S0 ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_S0;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_S0;
+  }
+}
+@mixin theme_S3 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_S3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_S3;
+  }
+}
+@mixin theme_border_c_S3 ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $black_S3;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $white_S3;
+  }
+}
+@mixin theme_color_S3 () {
+  [data-theme='theme_problack'] & {
+    color: $black_S3;
+  }
+  [data-theme='theme_ivory'] & {
+    color: $white_S3;
+  }
+}
+@mixin theme_S1 () {
+  [data-theme='theme_problack'] & {
+    background-color: $black_S1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $white_S1;
+  }
+}
+
+@mixin theme_boxshown_head () {
+  [data-theme='theme_problack'] & {
+    box-shadow: $black_boxshown_head;
+    -webkit-box-shadow: $black_boxshown_head;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: $white_boxshown_head;
+    -webkit-box-shadow: $white_boxshown_head;
+  }
+}
+@mixin theme_boxshown_menu () {
+  [data-theme='theme_problack'] & {
+    box-shadow: $black_boxshown_menu;
+    -webkit-box-shadow: $black_boxshown_menu;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: $white_boxshown_menu;
+    -webkit-box-shadow: $white_boxshown_menu;
+  }
+}
+@mixin theme_boxshown_time_top () {
+  [data-theme='theme_problack'] & {
+    box-shadow: $black_boxshown_time_top;
+    -webkit-box-shadow: $black_boxshown_time_top;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: $white_boxshown_time_top;
+    -webkit-box-shadow: $white_boxshown_time_top;
+  }
+}
+@mixin theme_boxshown_time_bottom () {
+  [data-theme='theme_problack'] & {
+    box-shadow: $black_boxshown_time_bottom;
+    -webkit-box-shadow: $black_boxshown_time_bottom;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: $white_boxshown_time_bottom;
+    -webkit-box-shadow: $white_boxshown_time_bottom;
+  }
+}
+@mixin theme_svg () {
+  [data-theme='theme_problack'] & {
+    fill: $black_svg;
+    stroke: $black_svg;
+  }
+  [data-theme='theme_ivory'] & {
+    fill: $white_svg;
+    stroke: $white_svg;
+  }
+}
+@mixin theme_icon () {
+  [data-theme='theme_problack'] & {
+    color:  $black_icon;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $white_icon;
+  }
+}
+
+/**
+ * @Descripttion: 面板
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+@mixin theme_mainbg () {
+  [data-theme='theme_problack'] & {
+    background-color: $B22;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $T10;
+  }
+}
+@mixin theme_panel_line ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $T20;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $B24;
+  }
+}
+@mixin theme_footer_line ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $B20;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $B24;
+  }
+}
+@mixin theme_panel_font () {
+  [data-theme='theme_problack'] & {
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color: $T20;
+  }
+}
+@mixin theme_panel_body () {
+  [data-theme='theme_problack'] & {
+    background-color: $B23;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $B25;
+  }
+}
+// 左侧面板
+@mixin box_shadow () {
+  [data-theme='theme_problack'] & {
+    box-shadow: 1px 2px 3px 2px $T20_3;
+    -webkit-box-shadow: 1px 2px 3px 2px $T20_3;
+    -moz-box-shadow: 1px 2px 3px 2px $T20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: 1px 2px 3px 2px $T20_1;
+    -webkit-box-shadow: 1px 2px 3px 2px $T20_1;
+    -moz-box-shadow: 1px 2px 3px 2px $T20_1;
+  }
+}
+@mixin box_shadow_head () {
+  [data-theme='theme_problack'] & {
+    box-shadow: 0px 2px 3px 2px $T20_3;
+    -webkit-box-shadow: 0px 2px 3px 2px $T20_3;
+    -moz-box-shadow: 0px 2px 3px 2px $T20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: 0px 2px 3px 2px $T20_1;
+    -webkit-box-shadow: 0px 2px 3px 2px $T20_1;
+    -moz-box-shadow: 0px 2px 3px 2px $T20_1;
+  }
+}
+@mixin box_shadow_model () {
+  [data-theme='theme_problack'] & {
+    box-shadow: 0px 0px 3px 2px $T20_3;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_3;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    box-shadow: 0px 0px 3px 2px $T20_1;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_1;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_1;
+  }
+}
+@mixin theme_leftMenu () {
+  [data-theme='theme_problack'] & {
+    // background-color:  $B22;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    // background-color:  $T10;
+    color: $T20;
+  }
+}
+
+@mixin theme_leftMenu_select () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B13;
+  }
+}
+@mixin theme_collapse_panel_bg () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B22_5;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B22_5;
+  }
+}
+
+ /**
+  * @Descripttion: 表格table样式集合
+  * @Author: zhusn-b
+  * @param {type} 
+  * @return: 
+  */
+  // 表头背景
+@mixin theme_table_thead_bg () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B24;
+  }
+}
+// 表头文字
+@mixin theme_table_thead_font () {
+  [data-theme='theme_problack'] & {
+    color:  $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $T20;
+  }
+}
+// 列背景1
+@mixin theme_table_tbody_bg () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B22;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B25;
+  }
+}
+// 列背景2
+@mixin theme_table_tbody_bg2 () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B22_92;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $T10;
+  }
+}
+// 列文字
+@mixin theme_table_tbody_font () {
+  [data-theme='theme_problack'] & {
+    color:  $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $T20;
+  }
+}
+// 列图标
+@mixin theme_table_tbody_icon () {
+  [data-theme='theme_problack'] & {
+    color:  $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color:  $B22;
+  }
+}
+// 悬浮背景
+@mixin theme_table_float () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B13;
+  }
+}
+@mixin theme_table_line ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $B21;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $B24;
+  }
+}
+
+/**
+ * @Descripttion: 按钮
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+// 大按钮蓝色
+@mixin theme_btn_lg () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B10;
+    color: $T10;
+  }
+}
+@mixin theme_btn_lg_hover () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11;
+  }
+}
+@mixin theme_btn_lg_active () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B12;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B12;
+  }
+}
+@mixin theme_btn_lg_disabled () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B10_3;
+  }
+}
+// 中按钮填充类蓝色
+@mixin theme_btn_blue () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B10;
+    color: $T10;
+  }
+}
+@mixin theme_btn_blue_hover () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11;
+  }
+}
+@mixin theme_btn_blue_active () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B12;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B12;
+  }
+}
+@mixin theme_btn_blue_disabled () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B10_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B10_3;
+  }
+}
+// 中按钮填充类灰色
+@mixin theme_btn_gray () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B20;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B20;
+    color: $T10;
+  }
+}
+@mixin theme_btn_gray_hover () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B21;
+  }
+}
+@mixin theme_btn_gray_active () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B22;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B22;
+  }
+}
+@mixin theme_btn_gray_disabled () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B20_3;
+  }
+}
+// 中按钮边框类蓝色
+@mixin theme_btn_border_blue () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11_2;
+    border: 1px solid $B11;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11_2;
+    border: 1px solid $B11;
+    color: $T10;
+  }
+}
+@mixin theme_btn_border_blue_hover () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11_3;
+  }
+}
+@mixin theme_btn_border_blue_active () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11_1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11_1;
+  }
+}
+@mixin theme_btn_border_blue_disabled () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B11_1;
+    border-color: $B11_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B11_1;
+    border-color: $B11_3;
+  }
+}
+// 中按钮边框类灰色
+@mixin theme_btn_border_gray () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21_2;
+    border: 1px solid $B21;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B21_2;
+    border: 1px solid $B21;
+    color: $T10;
+  }
+}
+@mixin theme_btn_border_gray_hover () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B21_3;
+  }
+}
+@mixin theme_btn_border_gray_active () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21_1;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B21_1;
+  }
+}
+@mixin theme_btn_border_gray_disabled () {
+  [data-theme='theme_problack'] & {
+    background-color:  $B21_1;
+    border-color: $B21_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color:  $B21_1;
+    border-color: $B21_3;
+  }
+}
+
+ /**
+  * @Descripttion: 输入框
+  * @Author: zhusn-b
+  * @param {type} 
+  * @return: 
+  */ 
+// 默认输入框
+@mixin theme_input {
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B21;
+    border-radius: 4px;
+    background-color: $B23;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B24;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//输入框hover
+@mixin theme_input_hover {
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $B23;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//输入框foucs
+@mixin theme_input_foucs {
+  [data-theme='theme_problack'] & {
+    outline: 2px solid $B11;
+    -moz-outline-radius: 4px;
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+  [data-theme='theme_ivory'] & {
+    outline: 2px solid $B11;
+    -moz-outline-radius: 4px;
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//输入框disabled
+@mixin theme_input_disabled {
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B21_3;
+    border-radius: 4px;
+    background-color: $B23_3;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B24_3;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+@mixin theme_table_input {
+  [data-theme='theme_problack'] & {
+    outline: 2px solid $B11;
+    background-color: $T10;
+    color: $T20;
+  }
+  [data-theme='theme_ivory'] & {
+    outline: 2px solid $B11;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+
+/**
+ * @Descripttion: 下拉菜单
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+// select
+@mixin theme_select{
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B21;
+    border-radius: 4px;
+    background-color: $B23;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B24;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//select
+@mixin theme_select_hover {
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $B23;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B11;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//select foucs
+@mixin theme_select_foucs {
+  [data-theme='theme_problack'] & {
+    outline: 2px solid $B11;
+    -moz-outline-radius: 4px;
+    border-radius: 4px;
+    background-color: $B23;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    outline: 2px solid $B11;
+    -moz-outline-radius: 4px;
+    border-radius: 4px;
+    background-color: $T10;
+    color: $T20;
+  }
+}
+//select 下拉框
+@mixin theme_select_body {
+  [data-theme='theme_problack'] & {
+    border-radius: 4px;
+    background-color: $B22;
+    box-shadow: 0px 0px 3px 2px $T20_3;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_3;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    border-radius: 4px;
+    background-color: $T10;
+    box-shadow: 0px 0px 3px 2px $T20_1;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_1;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_1;
+  }
+}
+@mixin theme_select_body_font {
+  [data-theme='theme_problack'] & {
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color: $T20;
+  }
+}
+@mixin theme_select_body_active {
+  [data-theme='theme_problack'] & {
+    background-color: $B10;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $B13;
+  }
+}
+
+/**
+ * @Descripttion: 日期表格组件
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+@mixin theme_datepicker {
+  [data-theme='theme_problack'] & {
+    background-color: $B22;
+    box-shadow: 0px 0px 3px 2px $T20_3;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_3;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_3;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $T10;
+    box-shadow: 0px 0px 3px 2px $T20_1;
+    -webkit-box-shadow: 0px 0px 3px 2px $T20_1;
+    -moz-box-shadow: 0px 0px 3px 2px $T20_1;
+  }
+}
+@mixin theme_datepicker_line ($e, $w, $s) {
+  [data-theme='theme_problack'] & {
+    #{$e}: $w $s $B13;
+  }
+  [data-theme='theme_ivory'] & {
+    #{$e}: $w $s $B10;
+  }
+}
+@mixin theme_datepicker_font () {
+  [data-theme='theme_problack'] & {
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    color: $T20;
+  }
+}
+
+@mixin theme_datepicker_active () {
+  [data-theme='theme_problack'] & {
+    background-color: $B11;
+  }
+  [data-theme='theme_ivory'] & {
+    background-color: $B13;
+  }
+}
+@mixin theme_datepicker_today () {
+  [data-theme='theme_problack'] & {
+    border: 1px solid $B13;
+    color: $T10;
+  }
+  [data-theme='theme_ivory'] & {
+    border: 1px solid $B10;
+    color: $T20;
+  }
+}
+
+/**
+ * @Descripttion: 建筑设计工具
+ * @Author: zhusn-b
+ * @param {type} 
+ * @return: 
+ */
+
+ // tools
+ @mixin theme_tools_bg () {
+  [data-theme='theme_problack'] & {
+    background: $B22_75;
+  }
+  [data-theme='theme_ivory'] & {
+    background: $B22_75;
+  }
+}

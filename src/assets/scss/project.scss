@@ -1,0 +1,73 @@
+/**
+ * @Descripttion: table css
+ * @Author: zhusn-b
+ */
+ .godon-project{
+  // padding: 28px 60px;
+  padding: 28px 20px;
+  height: calc(100% - 56px);
+  // height: 100%;
+  overflow-y: auto;
+  &.templete-public{
+    padding-top: 0;
+    .godon-libary{
+      height: 56px;
+    }
+  }
+  .project-table{
+    margin-top: 28px;
+    // height: calc(100% - 62px);
+  }
+  .godon-libary{
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(space-between);
+    .condition{
+      @include display-flex();
+      @include align-items(center);
+      &.godon-form{
+        .el-input__inner{
+          height: 32px;
+          line-height: 32px;
+        }
+      }
+      .label{
+        @include theme_W1();
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      .search{
+        height: 32px;
+        width: 32px;
+        margin-left: 10px;
+        @include theme_W1();
+        @include box-sizing();
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(center);
+        border-radius: 4px;
+        @include theme_L3_split(border, 1px, solid);
+      }
+    }
+  }
+}
+.godon-input{
+  @include flex(1, 1, auto);
+  @include display-flex();
+  @include align-items(center);
+  position: relative;
+  .input-search{
+    position: absolute;
+    right: 0;
+  }
+  .el-input__icon{
+    line-height: inherit;
+  }
+  .el-input__prefix{
+    right: 0px;
+    left: auto;
+  }
+  .el-date-editor{
+    width: 211px;
+  }
+}

@@ -1,0 +1,255 @@
+.site-frame-login{
+  width: 100%;
+  min-height: 100%;
+  background: url('./assets/icon/login.jpg') no-repeat;
+  background-size: cover;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  .login-form{
+    width: 425px;
+    height: 445px;
+    background:rgba(36,39,42,1);
+    box-shadow:0px 2px 4px 0px rgba(0,0,0,0.5);
+    @include box-sizing();
+    transform: translate(60%);
+    .form-head{
+      text-align: center;
+      font-size: 40px;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+    .form-main{
+      padding: 16px 62px;
+      .login-type{
+        @include display-flex();
+        @include align-items(center);
+        position: relative;
+        .text{
+          display: inline-block;
+          height: 43px;
+          @include flex(1, 0, 50%);
+          line-height: 43px;
+          text-align: center;
+          color: #ffffff;
+          font-size: 14px;
+          &.active{
+            color: #3177C7;
+          }
+        }
+        .bottom-line{
+          position: absolute;
+          height: 2px;
+          background-color: #3C689C;
+          width: 50%;
+          left: 0;
+          bottom: 0;
+          transition: left $second ease-in-out;
+          -webkit-transition: left $second ease-in-out;
+          -moz-transition: left $second ease-in-out;
+          &.active{
+            left: 50%;
+          }
+        }
+      }
+      .login-form-item{
+        margin-top: 12px;
+        height: 44px;
+        @include display-flex();
+        @include align-items(center);
+        .form-input{
+          width: 100%;
+          height: 100%;
+          @include display-flex();
+          @include align-items(center);
+          border-radius: 5px;
+          background-color: #ffffff;
+          @include box-sizing();
+          padding: 0 10px;
+          color: #333333;
+          font-size: 14px;
+        }
+        .left{
+          @include flex(1, 1, auto);
+          height: 100%;
+          @include display-flex();
+          @include align-items(center);
+          span{
+            &:first-child{
+              color: #ffffff;
+              margin-right: 34px;
+              .el-icon-success{
+                color: #3177C7;
+                margin-right: 5px;
+              }
+            }
+            &:first-child+span{
+              color: #3177C7;
+            }
+          }
+        }
+        .register{
+          width: 50px;
+          height: 100%;
+          @include display-flex();
+          @include align-items(center);
+          @include justify-content(flex-end);
+          color: #3177C7;
+        }
+        &.between{
+          @include justify-content(space-between);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+/**
+ * @Descripttion:  机构css
+ * @Author: zhusn-b
+ */
+.site-frame-mechanism{
+  height: 100%;
+  width: 100%;
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+  @include box-sizing();
+  padding: 4% 8%;
+  @include theme_A1();
+  // background-color: #40474F;
+  .mechanism-frame{
+    width: 100%;
+    height: 100%;
+    // background-color: #24272A;
+    @include theme_A3();
+    @include theme_boxshown_head();
+    // box-shadow:0px 2px 4px 1px rgba(20,20,20,1);
+    .mechanism-header{
+      height: 63px;
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(space-between);
+      @include theme_L3_split(border-bottom, 1px, solid);
+      padding: 0 54px;
+      .name{
+        font-size: 18px;
+        @include theme_W1();
+      }
+      .href{
+        color: #3177C7;
+        font-size: 12px;
+      }
+    }
+    .mechanism-content{
+      padding: 0 54px 40px;
+      height: calc(100% - 86px);
+      .mechanism-search{
+        margin: 22px 0;
+        width: 100%;
+        @include display-flex();
+        @include align-items(center);
+        .mechanism-input{
+          position: relative;
+          width: 396px;
+          height: 32px;
+          @include box-sizing();
+          background:rgba(255,255,255,1);
+          border-radius:4px;
+          border:1px solid rgba(217,217,217,1);
+          .m-input{
+            @include box-sizing();
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+          }
+          .i-search{
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            width:48px;
+            height:32px;
+            background:rgba(60,104,156,1);
+            border-radius:0px 4px 4px 0px;
+            line-height: 32px;
+            text-align: center;
+            color: #ffffff;
+          }
+        }
+        .tip{
+          @include flex(1, 1, auto);
+          color: #ffffff;
+          font-size: 12px;
+          margin-left: 17px;
+        }
+      }
+      .mechanism-content-query{
+        height: calc(100% - 76px);
+      }
+      &.mechanism-container{
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(center);
+        min-height: 400px;
+        overflow: auto;
+      }
+    }
+  }
+}
+.mechanism-oprator{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  .tip{
+    font-size: 12px;
+    color: #ffffff;
+    margin-left: 12px;
+  }
+}
+.item-part{
+  margin-bottom: 12px;
+  .godon-input{
+    .el-input{
+      .el-input__inner{
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+  &.flex-start{
+    @include align-items(flex-start);
+  }
+  .godon-form-label{
+    width: 110px;
+    text-align: right;
+    margin-right: 8px;
+  }
+  .input-check{
+    margin-left: 15px;
+  }
+  .item-gray-btn{
+    &.mechanism{
+      width: 183px;
+    }
+  }
+  .godon-input{
+    @include display-flex();
+    @include align-items(center);
+    .godon-input-r{
+      &.godon-btn{
+        margin-left: 15px;
+      }
+    }
+    .godon-input__inder{
+      height: 32px;
+      padding: 0 7px;
+      &.godon-textarea{
+        height: auto;
+        padding: 7px;
+        &.mid{
+          width: 280px
+        }
+      }
+    }
+  }
+}

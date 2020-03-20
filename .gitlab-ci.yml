@@ -1,0 +1,43 @@
+stages:
+  - 1资源拉取
+  - 2构建代码
+  - 3部署程序
+
+cache:
+  paths:
+    - node_modules/
+
+# 常量参数
+variables:
+
+资源拉取:
+  stage: 1资源拉取
+  script:
+    - echo "1资源拉取开始>>>"
+    - BASE_PATH=$(pwd)
+    - echo "1.1拉取代码开始>>>"
+    - cd $SUPPLIER_H5_PATH
+    - git pull
+    - npm install
+  when: manual
+
+构建代码:
+  stage: 2构建代码
+  script:
+    - echo "2构建代码开始>>>"
+    - BASE_PATH=$(pwd)
+    - echo "2.1.>>>"
+    - cd
+    - npm install
+    - npm run build:test
+    - rm -rf ./docker/test/nginx
+    - cp -avr ./nginx ./docker/test/
+    - rm -rf ./docker/test/wrap
+    - cp -avr ./wrap ./docker/test/wrap/
+    - ls ./docker/test/wrap/
+  when: manual
+
+部署程序:
+  stage: 3部署程序
+  script:
+  when: manual

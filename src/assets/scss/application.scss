@@ -1,0 +1,62 @@
+$application-line-bgColor: #40474F;
+.godon-application{
+  padding: 20px;
+  .application-sort{
+    @include display-flex();
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include theme_W2();
+  }
+  .application-mod{
+    margin-top: 24px;
+    .mod-line{
+      @include display-flex();
+      @include align-items(center);
+      .line-left{
+        width: 28px;
+        height: 1px;
+        display: inline-block;
+        @include theme_L3();
+      }
+      .line-name{
+        padding: 0 15px;
+        display: inline-block;
+        font-size: 12px;
+        @include theme_W3();
+      }
+      .line-right{
+        @include flex(1, 1, auto);
+        height: 1px;
+        display: inline-block;
+        @include theme_L3();
+      }
+    }
+    .mod-item{
+      @include theme_W1();
+      font-size: 12px;
+      @include display-flex();
+      @include flex-wrap(wrap);
+      .mod-child{
+        margin-top: 23px;
+        width: 170px;
+        height: 28px;
+        @include display-flex();
+        @include align-items(center);
+        .mod-child-collect{
+          @include display-flex();
+          @include align-items(center);
+          img{
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+          }
+        }
+        .mod-child-name{
+          font-size: 12px;
+          margin-left: 10px;
+          @include theme_W1();
+        }
+      }
+    }
+  }
+}
